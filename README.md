@@ -1,6 +1,9 @@
 # Multi-Tag
 a multi-tagging system that overides unity's default tagging system
 
+## To install:
+Download the package from [here](https://github.com/mfragger/MultiTagSystem/releases). And import the package to your project.
+
 ## How to use in editor:
 ### Rebuild the tags via MultiTag > Rebuild Tags
     - this takes in the tags you set in the UnityEditor and puts it in a static class Tags.
@@ -59,3 +62,4 @@ public class SimpleMono : MonoBehaviour
     }
 }
 ```
+## [License](https://github.com/mfragger/MultiTagSystem/blob/main/LICENSE)
