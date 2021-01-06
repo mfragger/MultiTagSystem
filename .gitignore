@@ -59,4 +59,4 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Package Release do not ignore in Packages folder
-!/Packages/MultiTag-v*.unitypackage
+!/Packages/MultiTagSystem-v*.unitypackage
