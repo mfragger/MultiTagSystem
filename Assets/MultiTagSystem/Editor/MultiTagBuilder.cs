@@ -10,17 +10,6 @@ namespace MultiTagSystem
         private const string Location = "MultiTagSystem";
         private const string ClassName = "Tags";
 
-        [MenuItem("MultiTag/ShowWindow")]
-        private static void ShowWindow()
-        {
-            GetWindow<MultiTagBuilder>("MultiTagBuilder");
-        }
-
-        private void OnGUI()
-        {
-            GUILayout.Label("Base Settings", EditorStyles.boldLabel);
-        }
-
         [MenuItem("MultiTag/Rebuild Tags")]
         [ExecuteInEditMode]
         private static void BuildTags()
