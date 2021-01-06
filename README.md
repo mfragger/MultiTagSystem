@@ -3,7 +3,7 @@ a multi-tagging system that overides unity's default tagging system
 
 ## How to use in editor:
 ### Rebuild the tags via MultiTag > Rebuild Tags
-    - this takes in the tags you set in the UnityEditor and puts it in a static class MultiTagTags.
+    - this takes in the tags you set in the UnityEditor and puts it in a static class Tags.
     - this is required each time you add or delete custom tags from the editor.
 
 ### Add MultiTagComponent to the gameobject.
@@ -53,6 +53,9 @@ public class SimpleMono : MonoBehaviour
             All = new string[] { Tags.Player },
             None = new string[] { Tags.Untagged }
         });
+        
+        //Check if gameobject tagged with Finish tag
+        MultiTag.IsGameObjectTaggedWith(Tags.Finish, gameObject);
     }
 }
 ```
