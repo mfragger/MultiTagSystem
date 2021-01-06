@@ -8,10 +8,10 @@ namespace MultiTagSystem
     public class MultiTagComponent : MonoBehaviour
     {
         [HideInInspector]
-        public List<string> tags => _tags;
+        public List<string> Tags => _Tags;
 
         [SerializeField]
-        private List<string> _tags;
+        private List<string> _Tags;
 
         private void Awake()
         {
@@ -20,28 +20,28 @@ namespace MultiTagSystem
 
         public void AddDict()
         {
-            MultiTag.MultiTagsAddToDict(_tags.ToArray(), gameObject);
+            MultiTag.MultiTagsAddToDict(_Tags.ToArray(), gameObject);
         }
 
         private void OnDestroy()
         {
-            MultiTag.RemoveToDict(_tags.ToArray(), gameObject);
+            MultiTag.RemoveToDict(_Tags.ToArray(), gameObject);
         }
 
         /// <summary>
         /// Adds a Tag from the Set.
         /// <para>You cannot create a new Tag.</para>
-        /// <para>To add a Tag via the Editor and rebuild.</para>
+        /// <para>To create do it via the Editor and Rebuild.</para>
         /// </summary>
         /// <param name="tag"></param>
         public void AddTag(string tag)
         {
-            if (Tags.Set.Contains(tag))
+            if (MultiTagSystem.Tags.Set.Contains(tag))
             {
-                var hashSet = new HashSet<string>(_tags);
+                var hashSet = new HashSet<string>(_Tags);
                 if (hashSet.Add(tag))
                 {
-                    _tags = hashSet.ToList();
+                    _Tags = hashSet.ToList();
                     MultiTag.SingleTagAddToDict(tag, gameObject);
                 }
             }
@@ -53,12 +53,12 @@ namespace MultiTagSystem
         /// <param name="tag"></param>
         public void RemoveTag(string tag)
         {
-            if (Tags.Set.Contains(tag))
+            if (MultiTagSystem.Tags.Set.Contains(tag))
             {
-                var hashSet = new HashSet<string>(_tags);
+                var hashSet = new HashSet<string>(_Tags);
                 if (hashSet.Remove(tag))
                 {
-                    _tags = hashSet.ToList();
+                    _Tags = hashSet.ToList();
                     MultiTag.SingleRemoveFromDict(tag, gameObject);
                 }
             }

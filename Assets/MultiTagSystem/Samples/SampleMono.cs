@@ -17,7 +17,7 @@ public class SampleMono : MonoBehaviour
 
         foreach (var val in list)
         {
-            Debug.Log($"Query {val.name}");
+            Debug.Log($"Queried GameObject : {val.name}");
 
             var mtcomp = val.GetComponent<MultiTagComponent>();
 
@@ -28,7 +28,7 @@ public class SampleMono : MonoBehaviour
 
         //Getting the first gameObject from a list of gameobjects with Player tag
         var gameObject = MultiTag.GetGameObject(Tags.Player);
-        Debug.Log($"GetGameObject {gameObject.name}");
+        Debug.Log($"GetGameObject : {gameObject.name}");
 
         //Getting only a GameObject based on query
         gameObject = MultiTag.QuerySingle(new MultiTagFilter
@@ -37,6 +37,9 @@ public class SampleMono : MonoBehaviour
             None = new string[] { Tags.Untagged }
         });
 
-        Debug.Log($"QuerySingleton {gameObject.name}");
+        Debug.Log($"Queried Singleton : {gameObject.name}");
+
+        //Check if gameobject tagged with Finish tag
+        Debug.Log($"Is GameObect tagged with finish? : {MultiTag.IsGameObjectTaggedWith(Tags.Finish, gameObject)}");
     }
 }

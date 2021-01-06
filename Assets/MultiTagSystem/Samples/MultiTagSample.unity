@@ -150,10 +150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25f50bdd97d544795ec9c3f4fab70b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tags:
+  _Tags:
   - Player
-  - Untagged
   - Finish
+  - Untagged
 --- !u!4 &530882307
 Transform:
   m_ObjectHideFlags: 0
@@ -289,8 +289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25f50bdd97d544795ec9c3f4fab70b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tags:
+  _Tags:
   - EditorOnly
+  - Finish
 --- !u!4 &826638013
 Transform:
   m_ObjectHideFlags: 0
@@ -460,7 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25f50bdd97d544795ec9c3f4fab70b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tags:
+  _Tags:
   - EditorOnly
   - GameController
 --- !u!4 &1185620499
@@ -506,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25f50bdd97d544795ec9c3f4fab70b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tags:
+  _Tags:
   - Player
 --- !u!4 &1303800451
 Transform:
@@ -565,6 +566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c25f50bdd97d544795ec9c3f4fab70b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tags:
+  _Tags:
   - Player
   - Finish

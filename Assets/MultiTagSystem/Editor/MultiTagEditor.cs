@@ -15,7 +15,7 @@ namespace MultiTagSystem
         private void OnEnable()
         {
             UnityTags = InternalEditorUtility.tags;
-            TagsProp = serializedObject.FindProperty("_tags");
+            TagsProp = serializedObject.FindProperty("_Tags");
             List = new ReorderableList(serializedObject, TagsProp, true, true, true, true);
             List.drawHeaderCallback += DrawHeader;
             List.drawElementCallback += DrawElement;

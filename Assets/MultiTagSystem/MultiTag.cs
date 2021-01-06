@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.ComponentModel;
 
 namespace MultiTagSystem
 {
@@ -33,7 +34,7 @@ namespace MultiTagSystem
         /// <summary>
         /// Don't call this unless you know what you're doing.
         /// <para>This does not update the current state of the MultiTagComponent.</para>
-        /// <para>It's best to add a tag from a gameobject's MultiTagComponent.</para>
+        /// <para>It's best to add multiple tags from a gameobject's MultiTagComponent.</para>
         /// </summary>
         /// <param name="tags"></param>
         /// <param name="gameObject"></param>
@@ -211,7 +212,7 @@ namespace MultiTagSystem
         /// Gets the list from a key
         /// </summary>
         /// <param name="tag">Tag</param>
-        /// <returns>Shallow copy of List. null if false<GameObject></returns>
+        /// <returns>Shallow copy of List. Null if false</returns>
         public static List<GameObject> GetList(string tag)
         {
             return MtDict.ContainsKey(tag) ? MtDict[tag].ToList() : null;
@@ -231,10 +232,21 @@ namespace MultiTagSystem
         /// Gets the first gameobject from a tag
         /// </summary>
         /// <param name="tag">Tag</param>
-        /// <returns>GameObject if tag exist. null if false</returns>
+        /// <returns>GameObject if tag exist. Null if false</returns>
         public static GameObject GetGameObject(string tag)
         {
             return MtDict.ContainsKey(tag) ? MtDict[tag].ToArray()[0] : null;
+        }
+
+        /// <summary>
+        /// Check if gameobject is tagged with a tag
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <param name="gameObject"></param>
+        /// <returns>Returns false if tag does not exist</returns>
+        public static bool IsGameObjectTaggedWith(string tag, GameObject gameObject)
+        {
+            return MtDict.ContainsKey(tag) && MtDict[tag].Contains(gameObject);
         }
     }
 }
